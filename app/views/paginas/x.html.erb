@@ -1,4 +1,14 @@
 
 <div class="jumbotron">
 	<h1>Pagina de Inicio</h1>
+
+	<p><%= flash[:notice]%></p>
+	<form action="<%= paginas_save_form_path %>" method="POST">
+		<%= hidden_field_tag :authenticity_token, 
+			form_authenticity_token %>
+	    <label>Nombre</label><input name="q">
+	    <label>E-mail</label><input name="r">
+	    <label>Edad</label><input name="s">
+	    <input type="submit" value="enviar">
+	</form>
 </div>
